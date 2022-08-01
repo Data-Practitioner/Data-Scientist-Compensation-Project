@@ -85,7 +85,7 @@ data = data.sort_values(['variable', 'category'],ascending=[True, True])
 ##### App Heading ######
 
 # Adding Streamlit title.
-st.title('Stack Overflow Compensation Project')
+st.title('Data Scientist Compensation Project')
 
 # Text content.
 st.markdown("""
