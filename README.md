@@ -96,5 +96,27 @@ One hot encoded all the programming language columns to 1 (Yes) or 0 (No). <br>
 Created separate columns for each cloud platform used. <br>
 One hot encoded all the could platform columns to 1 (Yes) or 0 (No). <br>
 
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/7c04ff293697e149d4936885f5946db45c64a9a4/data_science_pipeline/data_cleaning
+
+### 4.2. EDA
+
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/7c04ff293697e149d4936885f5946db45c64a9a4/data_science_pipeline/EDA.ipynb
+
+### 4.3. Feature Engineering
+
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/7c04ff293697e149d4936885f5946db45c64a9a4/data_science_pipeline/feature_engineering.ipynb
+
+### 4.4. Feature Selection
+
+Python Script -
+
+### 4.5. Model Building
+
+Python Script -
+
+### 4.6. Model Evaluation
+
+Python Script -
+
 ## Link to Web Application
 https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
