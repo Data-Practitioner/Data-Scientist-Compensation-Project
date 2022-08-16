@@ -79,7 +79,22 @@ https://insights.stackoverflow.com/survey?_ga=2.148200503.1852735476.1659374945-
 • platform_gcp – Uses GCP platform (0 – No & 1 – Yes) <br>
 • platform_azure – Uses Azure platform (0 – No & 1 – Yes) <br>
  
+## 4. Data Science Pipeline
 
+### 4.1. Data Cleaning
+
+Below data cleaning steps were executed to use data for further analysis.
+
+Filter rows where the country is USA and dev type is Data Scientist. <br>
+Merge state_code file to the main file to get the corresponding state code values for each row. <br>
+Categorized education level into 4 buckets (Bachelor, Master, Doctorate, and Other). <br>
+Created seniority level column based on years of professional coding experience. <br>
+Parsed salary column and calculated from monthly & weekly to annually. <br>
+Cleaned age column. <br>
+Created separate columns for each programming language used based on top 7 frequency. <br>
+One hot encoded all the programming language columns to 1 (Yes) or 0 (No). <br>
+Created separate columns for each cloud platform used. <br>
+One hot encoded all the could platform columns to 1 (Yes) or 0 (No). <br>
 
 ## Link to Web Application
 https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
