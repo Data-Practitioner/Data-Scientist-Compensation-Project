@@ -1,0 +1,107 @@
+# Import library.
+import pandas as pd
+import numpy as np
+
+# Load the data into dataframe.
+df = pd.read_csv(r"C:\Users\mak01\Desktop\Mihir\Project\Data Science Portfolio\End to End DS Project\Data Scientist Roles in USA\Data Source\Stackoverflow Data\survey_results_public.csv")
+state_code = pd.read_excel(r"C:\Users\mak01\Desktop\Mihir\Project\Data Science Portfolio\End to End DS Project\Data Scientist Roles in USA\Data Source\Stackoverflow Data\State Codes.xlsx")
+
+# Filter rows where country is not equal to USA.
+df = df[df['Country'] == "United States of America"]
+
+# Filter rows where dev type has word data scientist.
+df = df[df['DevType'].str.contains("Data scientist", na=False)]
+
+# Get state code from state_code dataframe.
+df = pd.merge(df, state_code, how='left', left_on=df['US_State'], right_on=state_code['State'], left_index=False, right_index=False)
+
+# Categorize edlevel column into different bucket.
+def education(x):
+    if x == "Bachelor’s degree (B.A., B.S., B.Eng., etc.)":
+        return 'Bachelor'
+    elif x == "Master’s degree (M.A., M.S., M.Eng., MBA, etc.)":
+        return 'Master'
+    elif x == 'Other doctoral degree (Ph.D., Ed.D., etc.)':
+        return 'Doctorate'
+    else:
+        return 'Other'
+
+df['Education'] = df['EdLevel'].apply(education)
+
+# Normalize years code pro column from text to actual number of years.
+df['YearsCodePro'] = df['YearsCodePro'].fillna(0)
+df['YearsCodePro'] = df['YearsCodePro'].replace(['Less than 1 year', 'More than 50 years'], [1, 50]).astype(int)
+
+# Creating seniority level based on years of coding experience.
+def seniority_level(x):
+    if x <= 3:
+        return 'Entry Level'
+    elif 4 >= x < 8:
+        return 'Associate'
+    else:
+        return 'Mid-Senior level'
+
+df['Seniority_Level'] = df['YearsCodePro'].apply(seniority_level)
+
+# Filter rows where compensation is not equal to 0 or nan.
+df = df[df['CompTotal'] != 0]
+df = df.dropna(subset=['CompTotal'])
+
+# Add 'Yearly' where compfreq is nan.
+df['CompFreq'] = df['CompFreq'].fillna('Yearly')
+
+# Convert salary from monthly & weekly to annualy.
+conditions = [(df['CompFreq'] == 'Weekly'), (df['CompFreq'] == 'Monthly'), (df['CompFreq'] == 'Yearly')]
+values = [df.CompTotal * 50, df.CompTotal * 12, df.CompTotal * 1]
+
+df['Compensation'] = np.select(conditions, values)
+df = df.query('Compensation >= 50000 & Compensation <= 300000')
+
+# Clean age column.
+df['Age'] = df['Age'].replace(['years old', 'Prefer not to say', 'years or older'], ['','0',''], regex=True).fillna('0')
+df['Min_Age'] = df['Age'].apply(lambda x: round(float(x.split('-')[0])))
+df['Max_Age'] = df['Age'].apply(lambda x: round(float(x.split('-')[-1])))
+df['Avg_Age'] = round((df['Min_Age']+df['Max_Age'])/2)
+
+# Getting Python/R/SQL/Bash_Shell/Java/JavaScript/HTML_CSS as language column.
+df['language_python'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'Python' in x else 0)
+df['language_r'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'R' in x else 0)
+df['language_sql'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'SQL' in x else 0)
+df['language_bash_shell'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'Bash/Shell' in x else 0)
+df['language_java'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'Java' in x else 0)
+df['language_javascript'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'JavaScript' in x else 0)
+df['language_html_css'] = df['LanguageHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'HTML/CSS' in x else 0)
+
+# Getting AWS/GBP/Azure as platform column.
+df['platform_aws'] = df['PlatformHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'AWS' in x else 0)
+df['platform_gcp'] = df['PlatformHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'Google Cloud Platform' in x else 0)
+df['platform_azure'] = df['PlatformHaveWorkedWith'].astype(str).apply(lambda x: 1 if 'Microsoft Azure' in x else 0)
+
+columns = ['ResponseId', 'State', 'State_Code', 'Education', 'Seniority_Level', 'Compensation', 'Avg_Age',
+           'language_python','language_r', 'language_sql', 'language_bash_shell', 'language_java',
+           'language_javascript', 'language_html_css', 'platform_aws', 'platform_gcp', 'platform_azure']
+
+dict = {'ResponseId':'response_id',
+         'State':'state',
+         'State_Code': 'state_code',
+         'Education': 'education',
+         'Seniority_Level': 'seniority_level',
+         'Compensation': 'compensation',
+         'Avg_Age':'avg_age',
+         'language_python': 'language_python',
+         'language_r': 'language_r',
+         'language_sql': 'language_sql',
+         'language_bash_shell': 'language_bash_shell',
+         'language_java': 'language_java',
+         'language_javascript': 'language_javascript',
+         'language_html_css': 'language_html_css',
+         'platform_aws': 'platform_aws',
+         'platform_gcp': 'platform_gcp',
+         'platform_azure': 'platform_azure'}
+
+# Rename columns of dataframe.
+df = df[columns]
+df.rename(columns=dict, inplace=True)
+
+# Save the data into csv format.
+df.to_csv("stackoverflow_data.csv", index=False
