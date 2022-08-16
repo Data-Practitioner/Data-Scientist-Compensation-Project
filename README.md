@@ -127,7 +127,8 @@ Created a Steamlit web app so anyone can view it which is deploy using Streamlit
 
 Two files are required to deploy the file on the Github repository.
 
-Streamlit Application File - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/github_app.py
+Streamlit Application File - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/github_app.py 
+
 Requirements Txt File - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/requirements.txt
 
 ### 5.2. Deploy Application
