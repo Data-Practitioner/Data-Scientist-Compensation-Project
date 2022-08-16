@@ -11,22 +11,22 @@ Build a web application that compares actual vs predicted compensation based on 
 
 ## Tools
 Data Storage - Excel <br>
-Data Mining, Analysis, and Transform - Python (Pandas & Numpy)
-Data Science/ML - Python (Sklearn, Feature Engine, Scipy, Feature Tools, Statsmodel, LightGBM, XGBoost, and Catboost)
-Data Visualization - Python (Matplotlib & Seaborn)
-Web Application - Python (Streamlit)
-Application Hosting (Github)
+Data Mining, Analysis, and Transform - Python (Pandas & Numpy) <br>
+Data Science/ML - Python (Sklearn, Feature Engine, Scipy, Feature Tools, Statsmodel, LightGBM, XGBoost, and Catboost) <br>
+Data Visualization - Python (Matplotlib & Seaborn)<br>
+Web Application - Python (Streamlit) <br>
+Application Hosting (Github) <br>
 
 ## Technical Skills
-Data Analysis
-Data Mining
-Data Transformation
-Data Visualization
-Programming (Python)
-ML Deployment
-Web Application
-Data Storytelling
-Machine Learning
+Data Analysis <br>
+Data Mining <br>
+Data Transformation <br>
+Data Visualization <br>
+Programming (Python) <br>
+ML Deployment <br>
+Web Application <br>
+Data Storytelling <br>
+Machine Learning <br>
 
 ## Link to Web Application
 https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
