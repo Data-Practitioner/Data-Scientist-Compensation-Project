@@ -54,5 +54,32 @@ Does one knowing SQL provide a better salary? <br>
 Does one knowing the command line provide a better salary? <br>
 Does one knowing cloud computing platform provide a better salary? <br>
 
+## 3. Data Source
+Data is collected from Stack Overflow Survey 2021 data.
+
+https://insights.stackoverflow.com/survey?_ga=2.148200503.1852735476.1659374945-1267271718.1659374945
+
+**Data Description**
+
+• response_id  –  Developer’s response identification number on the survey <br>
+• state – State of the developer <br>
+• state_code –  State code of the developer <br>
+• education –  Education of the developer <br>
+• seniority_level  – Level of experience in the field of Data Science <br>
+• compensation – Salary of developer <br>
+• avg_age – Approximate age of the developer <br>
+• language_python – Codes in Python (0 – No & 1 – Yes) <br>
+• language_r – Codes in R  (0 – No & 1 – Yes) <br>
+• language_sql – Codes in SQL  (0 – No & 1 – Yes) <br>
+• language_bash_shell – Codes in Bash/Shell (0 – No & 1 – Yes) <br>
+• language_java – Codes in Java (0 – No & 1 – Yes) <br> 
+• language_javascript – Codes in Javascript (0 – No & 1 – Yes) <br>
+• language_html_css  – Codes in HTML/CSS (0 – No & 1 – Yes) <br>
+• platform_aws – Uses AWS platform (0 – No & 1 – Yes) <br>
+• platform_gcp – Uses GCP platform (0 – No & 1 – Yes) <br>
+• platform_azure – Uses Azure platform (0 – No & 1 – Yes) <br>
+ 
+
+
 ## Link to Web Application
 https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
