@@ -10,7 +10,7 @@ An HR company wants to understand how much Data Scientists can get compensated i
 Build a web application that compares actual vs predicted compensation based on factors such as education, seniority, location (USA), experience, and technical knowledge.
 
 ## Tools
-Data Storage - Excel
+Data Storage - Excel <br>
 Data Mining, Analysis, and Transform - Python (Pandas & Numpy)
 Data Science/ML - Python (Sklearn, Feature Engine, Scipy, Feature Tools, Statsmodel, LightGBM, XGBoost, and Catboost)
 Data Visualization - Python (Matplotlib & Seaborn)
