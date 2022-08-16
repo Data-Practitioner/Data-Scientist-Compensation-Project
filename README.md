@@ -108,15 +108,38 @@ Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation
 
 ### 4.4. Feature Selection
 
-Python Script -
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/data_science_pipeline/feature_selection.ipynb
 
 ### 4.5. Model Building
 
-Python Script -
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/data_science_pipeline/model_building.ipynb
 
 ### 4.6. Model Evaluation
 
-Python Script -
+Python Script - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/data_science_pipeline/model_evaluation.ipynb
 
-## Link to Web Application
-https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
+## 5. Model Deployment
+Created a Steamlit web app so anyone can view it which is deploy using Streamlit Share as front end and Github repository as backend.
+
+### 5.1. Containerize Application
+
+Two files are required to deploy the file on the Github repository.
+
+Streamlit Application File - 
+Requirements Txt File - 
+
+### 5.2. Deploy Application
+Both files are uploaded to Github Repository → Streamlit Share pointing to Github Repository to show the web application.
+
+## Conclusion
+Decision Tree Regression algorithm was used to run predictions on compensation.
+
+The below link takes to the Streamlit application where predicted vs actual compensation results on different variables and categories are shown in the form of tabular data and visualization.
+
+Website ⇒ https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main/github_app.py
+
+![image](https://user-images.githubusercontent.com/99619460/184934622-849e0d73-8fc2-4aa6-a9b6-cf267edbb070.png)
+![image](https://user-images.githubusercontent.com/99619460/184934643-af879e0b-fa71-4276-a131-3d71034a97db.png)
+
+
+
