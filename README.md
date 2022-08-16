@@ -125,8 +125,8 @@ Created a Steamlit web app so anyone can view it which is deploy using Streamlit
 
 Two files are required to deploy the file on the Github repository.
 
-Streamlit Application File - 
-Requirements Txt File - 
+Streamlit Application File - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/github_app.py
+Requirements Txt File - https://github.com/Data-Practitioner/Data-Scientist-Compensation-Project/blob/main/requirements.txt
 
 ### 5.2. Deploy Application
 Both files are uploaded to Github Repository → Streamlit Share pointing to Github Repository to show the web application.
@@ -140,6 +140,3 @@ Website ⇒ https://share.streamlit.io/mkamdar7/streamlit-stackoverflow-app/main
 
 ![image](https://user-images.githubusercontent.com/99619460/184934622-849e0d73-8fc2-4aa6-a9b6-cf267edbb070.png)
 ![image](https://user-images.githubusercontent.com/99619460/184934643-af879e0b-fa71-4276-a131-3d71034a97db.png)
-
-
-
